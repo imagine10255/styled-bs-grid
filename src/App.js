@@ -2,25 +2,40 @@
 
 import React from 'react';
 import './App.css';
-import Col from './lib/components/Col/Col';
-import Container from './lib/components/Container/Container';
-import Row from './lib/components/Row/Row';
+import {Col, Row, Container} from './lib';
 
 function App() {
     return (
         <div className="App">
-            <Container fluid>
-                <Row noGutters>
-                    <Col col={24} lg={6} xl={12}>
+            <Container>
+                <Row>
+                    <Col lg={6} xl={12}>
                         <div style={{background: '#000'}}>Background</div>
                     </Col>
-                    <Col col={24} lg={6} xl={12}>
+                    <Col lg={6} xl={12}>
                         <div style={{background: 'red'}}>Background</div>
                     </Col>
-                    <Col col={24} lg={6} xl={12}>
+                    <Col lg={6} xl={12}>
                         <div style={{background: 'blue'}}>Background</div>
                     </Col>
-                    <Col col={24} lg={6} xl={12}>
+                    <Col lg={6} xl={12}>
+                        <div style={{background: 'green'}}>Background</div>
+                    </Col>
+                </Row>
+            </Container>
+
+            <Container fluid>
+                <Row noGutters>
+                    <Col col lg={6} xl={12}>
+                        <div style={{background: '#000'}}>Background</div>
+                    </Col>
+                    <Col col lg={6} xl={12}>
+                        <div style={{background: 'red'}}>Background</div>
+                    </Col>
+                    <Col col lg={6} xl={12}>
+                        <div style={{background: 'blue'}}>Background</div>
+                    </Col>
+                    <Col col lg={6} xl={12}>
                         <div style={{background: 'green'}}>Background</div>
                     </Col>
                 </Row>
