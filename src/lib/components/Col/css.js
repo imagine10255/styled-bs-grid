@@ -4,7 +4,6 @@ import {ColCss} from './types';
 
 const css: ColCss = {
     col: (column: any, gridColumns: number) => {
-        let singleCol: number = 0;
         let colFlexBasis: number = 0;
 
         switch(column){
@@ -24,7 +23,6 @@ const css: ColCss = {
           max-width: none;
         `;
             default:
-                singleCol = 100 / gridColumns;
                 colFlexBasis = (100 / gridColumns) * column;
                 return `
             -ms-flex: 0 0 ${colFlexBasis}%;

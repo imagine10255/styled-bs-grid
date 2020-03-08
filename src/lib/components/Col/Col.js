@@ -7,12 +7,13 @@ import getDataName from './getDataName';
 import media from '../../media';
 import {ColProps} from './types';
 import {isEmpty} from '../../utils';
-import {themeName} from '../ThemeProvider/ThemeProvider';
+import {themeName} from '../../config';
 
 const generateGirdMedia = props => {
-    return Object.keys(props.theme[themeName].breakpoints).map(sizeName => {
+    // eslint-disable-next-line array-callback-return
+    return Object.keys(props.theme[themeName].gridBreakpoints).map(sizeName => {
         if(!isEmpty(props[sizeName])){
-            return media[sizeName]`${getCss.col(props[sizeName], props.theme[themeName].gridColumns)}}`;
+            return media[sizeName]`${getCss.col(props[sizeName], props.theme[themeName].gridColumns)}}`
         }
     });
 };
@@ -34,8 +35,8 @@ const Col = styled.div.attrs(props  => ({
   min-height: 1px;
   
   ${props => css`
-     padding-right: ${props.theme[themeName].padding}px;
-     padding-left: ${props.theme[themeName].padding}px;
+     padding-right: ${props.theme[themeName].gridGutterWidth}px;
+     padding-left: ${props.theme[themeName].gridGutterWidth}px;
      
      ${props.col && getCss.col(props.col, props.theme[themeName].gridColumns)};
      

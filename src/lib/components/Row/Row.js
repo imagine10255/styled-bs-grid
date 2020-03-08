@@ -4,7 +4,7 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import {RowProps} from './types';
 import getDataName from './getDataName';
-import {themeName} from '../ThemeProvider/ThemeProvider';
+import {themeName} from '../../config';
 
 /**
  * Get Row Margin
@@ -12,7 +12,7 @@ import {themeName} from '../ThemeProvider/ThemeProvider';
  * @returns {*}
  */
 const getRowMargin = props => {
-    return props.noGutters ? 0: `-${props.theme[themeName].row.padding}px`;
+    return props.noGutters ? 0: `-${props.theme[themeName].gridGutterWidth}px`;
 };
 
 /**

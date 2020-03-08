@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Col from './lib/components/Col/Col';
 import Container from './lib/components/Container/Container';

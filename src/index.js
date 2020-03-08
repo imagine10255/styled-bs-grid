@@ -8,7 +8,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const theme = {
-    breakpoints: { // defaults below
+    gridGutterWidth: 10,
+    gridColumns: 24,
+    gridBreakpoints: { // defaults below
         xs: 0,
         sm: 576,
         md: 768,
@@ -16,25 +18,13 @@ const theme = {
         xl: 1200,
         xxl: 1540,
     },
-    row: {
-        padding: 10, // default 15
-    },
-    col: {
-        padding: 10, // default 15
-        gridColumns: 24,
-    },
-    padding: 10,
-    gridColumns: 24,
-    container: {
-        padding: 10, // default 15
-        maxWidth: { // defaults below
-            xxl: 1141,
-            xl: 1140,
-            lg: 960,
-            md: 720,
-            sm: 540,
-            xs: 540,
-        },
+    containerMaxWidths: { // defaults below
+        xs: 540,
+        sm: 540,
+        md: 720,
+        lg: 960,
+        xl: 1140,
+        xxl: 1141,
     },
 };
 

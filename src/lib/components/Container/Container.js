@@ -3,14 +3,14 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import {ContainerProps} from './types';
 
-import {themeName} from '../ThemeProvider/ThemeProvider';
+import {themeName} from '../../config';
 import media from '../../media';
 import getDataName from './getDataName';
 
 const generateWidthMaxMedia = props => {
-    return Object.keys(props.theme[themeName].breakpoints).map(sizeName => {
+    return Object.keys(props.theme[themeName].gridBreakpoints).map(sizeName => {
         return media[sizeName]`
-                max-width: ${props.theme[themeName].breakpoints[sizeName]}px;
+                max-width: ${props.theme[themeName].gridBreakpoints[sizeName]}px;
             `;
     });
 };
@@ -27,8 +27,8 @@ const Container = styled.div.attrs(props  => ({
   margin-left: auto;
   
   ${props => css`
-     padding-right: ${props.theme[themeName].padding}px;
-     padding-left: ${props.theme[themeName].padding}px;
+     padding-right: ${props.theme[themeName].gridGutterWidth}px;
+     padding-left: ${props.theme[themeName].gridGutterWidth}px;
      
      
      ${!props.fluid && css`

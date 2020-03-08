@@ -1,6 +1,7 @@
 // @flow
-import {css, CSSObject} from 'styled-components';
-import {Media} from './types';
+import {css} from 'styled-components';
+import get from 'lodash/get';
+import {themeName, defaultTheme} from '../config';
 
 const defaultBreakpoints = {
     xxl: 1540,
@@ -12,14 +13,9 @@ const defaultBreakpoints = {
 };
 
 const getBreakpoints = props => ({
-    ...defaultBreakpoints,
-    ...((props.theme &&
-        props.theme.styledBootstrapGrid &&
-        props.theme.styledBootstrapGrid.breakpoints) ||
-        {}),
+    ...defaultTheme.gridBreakpoints,
+    ...get(props.theme[themeName],'gridBreakpoints', {}),
 });
-
-// console.log('defaultBreakpoints', defaultBreakpoints, (Object.keys(defaultBreakpoints) as Media[]));
 
 const media = (Object.keys(defaultBreakpoints)).reduce(
     (accumulator, label) => {
@@ -28,7 +24,6 @@ const media = (Object.keys(defaultBreakpoints)).reduce(
         ${css(strings, ...interpolations)}
       }
     `;
-        console.log('minMedia', minMedia);
 
         const maxMedia = (strings, ...interpolations) => css`
       @media (max-width: ${props => getBreakpoints(props)[label]}px) {
