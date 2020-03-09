@@ -1,6 +1,6 @@
 // @flow
 
-export const themeName = 'styledBootstrapGrid';
+export const themeName = 'styledBsGrid';
 export const defaultTheme = {
     gridGutterWidth: 10,
     gridColumns: 24,

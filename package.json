@@ -11,16 +11,12 @@
     "dist/"
   ],
   "scripts": {
-    "dev": "babel src -d dist --wathch",
+    "dev": "yarn prepack:babel --watch",
     "build:flow": "flow-remove-types src/ -d lib/",
     "lint": "eslint . --fix",
-    "prepack": "rm -rf dist && mkdir dist && yarn run prepack:babel && yarn run prepack:flow",
-    "prepack:babel-copy": "rm -rf dist && mkdir dist && babel src -d dist --copy-files",
+    "prepack": "rm -rf ./dist && mkdir dist && yarn run prepack:babel && yarn run prepack:flow",
     "prepack:babel": "babel src -d dist",
     "prepack:flow": "flow-copy-source src dist"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -35,17 +31,17 @@
     ]
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "babel-preset-env": "^7.0.0-beta.3",
     "lodash": "^4.17.15",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "link:./example/node_modules/react",
+    "react-dom": "16.13.0",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
     "@babel/preset-flow": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "babel-eslint": "10.0.1",

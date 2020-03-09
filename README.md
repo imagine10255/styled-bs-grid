@@ -1,68 +1,152 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center"><img src="./banner.jpg" width="400"/></p>
 
-## Available Scripts
+## About styled-bs-grid
 
-In the project directory, you can run:
+styled-bs-grid is a bootstrap grid use styled-component:
 
-### `yarn start`
+- [Find and fix problems in your JavaScript code ESLint](https://eslint.org).
+- [Quickly build your entire app with our Grid Bootstrap & Styled-component](https://github.com/imagine10255/styled-bs-grid/tree/master).
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Config parameters
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Quick Start
 
-### `yarn build`
+Install styled-bs-grid in your project
+```zsh
+$ yarn add styled-bs-grid
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+add the your global css:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```css
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+```
 
-### `yarn eject`
+in your index.js add  
+`see the example/src/index.js`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```js
+import {GridThemeProvider} from 'styled-bs-grid';
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<GridThemeProvider gridTheme={{
+          gridGutterWidth: 10,
+          gridColumns: 24,
+          gridBreakpoints: {
+              xs: 0,
+              sm: 576,
+              md: 768,
+              lg: 992,
+              xl: 1200,
+              xxl: 1540,
+          },
+          containerMaxWidths: {
+              xs: 540,
+              sm: 540,
+              md: 720,
+              lg: 960,
+              xl: 1140,
+              xxl: 1141,
+          },
+      }}>
+    <App/>
+</GridThemeProvider>
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+use in your page/component:
+```js
+import {Container, Row, Col, media} from 'styled-bs-grid';
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+const MyPage = () => {
+    return (
+        <Container>
+            <MyTitle>styled-bs-grid</MyTitle>
+            <Row>
+                <Col col>col2 (50%) </Col>
+                <Col col>col2 (50%) </Col>
+            </Row>
+        </Container>
+    );
+}
 
-## Learn More
+const MyTitle = styled.div`
+    font-size: 12px;
+    ${media.md`
+        font-size: 14px;
+    `}
+`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+export default MyPage;
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Using this `media` object will help you to build media-queries that will fit the same way as Bootstrap do.
 
-### Analyzing the Bundle Size
+| name | *aliases* | css generated |
+| - | - | - |
+| xs | all sizes: @media (max-width: 575px)` |
+| sm | @media (min-width: 576px)` |
+| md | @media (min-width: 768px)` |
+| lg | @media (min-width: 992px)` |
+| xl | @media (min-width: 1200px)` |
+| xxl | @media (min-width: 1440px)` |
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+#### Container
 
-### Advanced Configuration
+| props | default | type | description |
+| - | - | - | - |
+| fluid | false | boolean | Equivalent to `container` and `container-fluid` |
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+#### Row
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+| props | default | type | description |
+| - | - | - | - |
+| noGutter | `undefined` | `boolean` | Equivalent to `no-gutter` |
 
-### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### Col
+
+| props | default | type | description |
+| - | - | - | - |
+| col | `undefined` | `number` *or* `string` *or* `boolean` | Goes from 1 to 24. Equivalent to `col-*` (or `col` in case of `true`) |
+| sm | `undefined` | `number` *or* `string` | Goes from 1 to 24. Equivalent to `col-sm-*` (or `col-sm` in case of `true`) |
+| md | `undefined` | `number` *or* `string` | Goes from 1 to 24. Equivalent to `col-md-*` (or `col-md` in case of `true`) |
+| lg | `undefined` | `number` *or* `string` | Goes from 1 to 24. Equivalent to `col-lg-*` (or `col-lg` in case of `true`) |
+| xl | `undefined` | `number` *or* `string` | Goes from 1 to 24. Equivalent to `col-xl-*` (or `col-xl` in case of `true`) |
+| xxl | `undefined` | `number` *or* `string` | Goes from 1 to 24. Equivalent to `col-xxl-*` (or `col-xxl` in case of `true`) |
+
+
+
+
+#### Develop
+
+open the terminal-styled-bs-grid
+```zsh
+$ yarn install
+$ yarn dev
+```
+
+open the terminal-example
+``````
+$ cd ./example
+$ yarn install
+$ yarn dev
+
+> 🚀 Ready on http://localhost:3000
+```
