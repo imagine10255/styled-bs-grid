@@ -97,39 +97,37 @@ Using this `media` object will help you to build media-queries that will fit the
 
 | name | *aliases* | css generated |
 | - | - | - |
-| xs | all sizes: @media (max-width: 575px)` |
 | sm | @media (min-width: 576px)` |
 | md | @media (min-width: 768px)` |
 | lg | @media (min-width: 992px)` |
 | xl | @media (min-width: 1200px)` |
-| xxl | @media (min-width: 1440px)` |
-
+| xxl | @media (min-width: 1540px)` |
 
 
 #### Container
 
-| props | default | type | description |
+| props | type | description |
 | - | - | - | - |
-| fluid | false | boolean | Equivalent to `container` and `container-fluid` |
+| fluid | boolean | Equivalent to `container` and `container-fluid` |
 
 
 #### Row
 
-| props | default | type | description |
-| - | - | - | - |
-| noGutter | `undefined` | `boolean` | Equivalent to `no-gutter` |
+| props | type | description |
+| - | - | - |
+| noGutter | `boolean` | Equivalent to `no-gutter` |
 
 
 #### Col
 
-| props | default | type | description |
+| props | type | description |
 | - | - | - | - |
-| col | `undefined` | `number` *or* `string` *or* `boolean` | Goes from 1 to 24. Equivalent to `col-*` (or `col` in case of `true`) |
-| sm | `undefined` | `number` *or* `string` | Goes from 1 to 24. Equivalent to `col-sm-*` (or `col-sm` in case of `true`) |
-| md | `undefined` | `number` *or* `string` | Goes from 1 to 24. Equivalent to `col-md-*` (or `col-md` in case of `true`) |
-| lg | `undefined` | `number` *or* `string` | Goes from 1 to 24. Equivalent to `col-lg-*` (or `col-lg` in case of `true`) |
-| xl | `undefined` | `number` *or* `string` | Goes from 1 to 24. Equivalent to `col-xl-*` (or `col-xl` in case of `true`) |
-| xxl | `undefined` | `number` *or* `string` | Goes from 1 to 24. Equivalent to `col-xxl-*` (or `col-xxl` in case of `true`) |
+| col | `number` *or* `auto` *or* `boolean` | Goes from 1 to 24. Equivalent to `col-*` (or `col` in case of `true`) |
+| sm | `number` *or* `auto` | Goes from 1 to 24. Equivalent to `col-sm-*` (or `col-sm` in case of `true`) |
+| md | `number` *or* `auto` | Goes from 1 to 24. Equivalent to `col-md-*` (or `col-md` in case of `true`) |
+| lg | `number` *or* `auto` | Goes from 1 to 24. Equivalent to `col-lg-*` (or `col-lg` in case of `true`) |
+| xl | `number` *or* `auto` | Goes from 1 to 24. Equivalent to `col-xl-*` (or `col-xl` in case of `true`) |
+| xxl | `number` *or* `auto` | Goes from 1 to 24. Equivalent to `col-xxl-*` (or `col-xxl` in case of `true`) |
 
 
 
