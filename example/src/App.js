@@ -8,7 +8,7 @@ function App() {
     return (
         <div className="App">
             <Container>
-                <Row>
+                <Row >
                     <Col lg={6} xl={12}>
                         <div style={{background: '#000'}}>Background</div>
                     </Col>
