@@ -1,6 +1,10 @@
 {
   "name": "styled-bs-grid",
   "description": "bootstrap grid system using styled components",
+  "bugs": {
+    "url": "https://github.com/imagine10255/styled-bs-grid/issues"
+  },
+  "homepage": "https://github.com/imagine10255/styled-bs-grid#readme",
   "version": "0.1.9",
   "private": false,
   "author": "imagine10255",
@@ -10,10 +14,19 @@
   "files": [
     "dist/"
   ],
+  "engines": {
+    "node": ">=8.15.0"
+  },
   "scripts": {
     "dev": "yarn prepack:babel --watch",
-    "build:flow": "flow-remove-types src/ -d lib/",
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "cz": "./node_modules/cz-customizable/standalone.js",
+    "release": "standard-version -r patch",
+    "release:minor": "standard-version -r minor",
+    "release:major": "standard-version -r major",
+    "release:pre": "standard-version --prerelease alpha",
+    "release:push": "git push --follow-tags origin master",
     "prepack": "rm -rf ./dist && mkdir dist && yarn run prepack:babel && yarn run prepack:flow",
     "prepack:babel": "babel src -d dist",
     "prepack:flow": "flow-copy-source src dist"
@@ -30,9 +43,26 @@
       "last 1 safari version"
     ]
   },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint:fix",
+      "git add --force"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "cz-customizable": {
+      "config": "./internals/cz-customizable/config.js"
+    }
+  },
   "dependencies": {
     "lodash": "^4.17.15",
-    "react": "link:./example/node_modules/react",
+    "react": "16.13.0",
     "react-dom": "16.13.0",
     "styled-components": "^5.0.1"
   },
@@ -57,6 +87,12 @@
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-react-hooks": "^2.3.0",
     "flow-bin": "^0.120.1",
-    "flow-copy-source": "^2.0.9"
+    "flow-copy-source": "^2.0.9",
+    "standard-version": "^7.1.0",
+    "husky": "^4.2.3",
+    "cz-conventional-changelog": "^3.1.0",
+    "cz-customizable": "^6.2.0",
+    "validate-commit-msg": "^2.14.0",
+    "lint-staged": "^10.0.8"
   }
 }
