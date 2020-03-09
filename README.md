@@ -91,7 +91,7 @@ export default MyPage;
 ```
 
 
-## parameters
+## Component Parameters
 
 Using this `media` object will help you to build media-queries that will fit the same way as Bootstrap do.
 
@@ -134,7 +134,7 @@ Using this `media` object will help you to build media-queries that will fit the
 
 
 
-#### Develop
+## How to develop modify this package
 
 open the terminal-styled-bs-grid
 ```zsh
