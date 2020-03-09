@@ -1,14 +1,23 @@
 {
   "name": "styled-bs-grid",
-  "version": "0.1.0",
-  "private": true,
+  "description": "bootstrap grid system using styled components",
+  "version": "0.1.9",
+  "private": false,
+  "author": "imagine10255",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.js.flow",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "babel src -d dist --wathch",
     "build:flow": "flow-remove-types src/ -d lib/",
-    "test": "react-scripts test",
     "lint": "eslint . --fix",
-    "eject": "react-scripts eject"
+    "prepack": "rm -rf dist && mkdir dist && yarn run prepack:babel && yarn run prepack:flow",
+    "prepack:babel-copy": "rm -rf dist && mkdir dist && babel src -d dist --copy-files",
+    "prepack:babel": "babel src -d dist",
+    "prepack:flow": "flow-copy-source src dist"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,14 +38,19 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "babel-preset-env": "^7.0.0-beta.3",
     "lodash": "^4.17.15",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/preset-flow": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
     "babel-eslint": "10.0.1",
+    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "eslint": "5.14.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-airbnb-base": "13.1.0",
@@ -46,6 +60,7 @@
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "flow-bin": "^0.120.1"
+    "flow-bin": "^0.120.1",
+    "flow-copy-source": "^2.0.9"
   }
 }
