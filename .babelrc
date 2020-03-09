@@ -1,0 +1,10 @@
+{
+    "presets": [
+        "@babel/preset-react",
+        "@babel/preset-flow"
+    ],
+    "plugins": [
+        "babel-plugin-styled-components",
+        "transform-flow-strip-types"
+    ]
+}

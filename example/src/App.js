@@ -2,7 +2,7 @@
 
 import React from 'react';
 import './App.css';
-import {Col, Row, Container} from './lib';
+import {Col, Row, Container} from 'styled-bs-grid';
 
 function App() {
     return (

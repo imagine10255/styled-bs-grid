@@ -19,4 +19,4 @@ module.name_mapper.extension='less' -> 'empty/object'
 esproposal.decorators=ignore
 
 [version]
-^0.86.0
+0.120.1
