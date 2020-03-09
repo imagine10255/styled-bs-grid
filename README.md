@@ -107,7 +107,7 @@ Using this `media` object will help you to build media-queries that will fit the
 #### Container
 
 | props | type | description |
-| - | - | - | - |
+| ----- | ---- | ----- |
 | fluid | boolean | Equivalent to `container` and `container-fluid` |
 
 
@@ -121,13 +121,13 @@ Using this `media` object will help you to build media-queries that will fit the
 #### Col
 
 | props | type | description |
-| - | - | - | - |
-| col | `number` *or* `auto` *or* `boolean` | Goes from 1 to 24. Equivalent to `col-*` (or `col` in case of `true`) |
-| sm | `number` *or* `auto` | Goes from 1 to 24. Equivalent to `col-sm-*` (or `col-sm` in case of `true`) |
-| md | `number` *or* `auto` | Goes from 1 to 24. Equivalent to `col-md-*` (or `col-md` in case of `true`) |
-| lg | `number` *or* `auto` | Goes from 1 to 24. Equivalent to `col-lg-*` (or `col-lg` in case of `true`) |
-| xl | `number` *or* `auto` | Goes from 1 to 24. Equivalent to `col-xl-*` (or `col-xl` in case of `true`) |
-| xxl | `number` *or* `auto` | Goes from 1 to 24. Equivalent to `col-xxl-*` (or `col-xxl` in case of `true`) |
+| - | - | - |
+| col | `number` *or* `'auto'` *or* `boolean` | Goes from 1 to 24. Equivalent to `col-*` (or `col` in case of `true`) |
+| sm | `number` *or* `'auto'` | Goes from 1 to 24. Equivalent to `col-sm-*` (or `col-sm` in case of `true`) |
+| md | `number` *or* `'auto'` | Goes from 1 to 24. Equivalent to `col-md-*` (or `col-md` in case of `true`) |
+| lg | `number` *or* `'auto'` | Goes from 1 to 24. Equivalent to `col-lg-*` (or `col-lg` in case of `true`) |
+| xl | `number` *or* `'auto'` | Goes from 1 to 24. Equivalent to `col-xl-*` (or `col-xl` in case of `true`) |
+| xxl | `number` *or* `'auto'` | Goes from 1 to 24. Equivalent to `col-xxl-*` (or `col-xxl` in case of `true`) |
 
 
 
