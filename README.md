@@ -95,13 +95,13 @@ export default MyPage;
 
 Using this `media` object will help you to build media-queries that will fit the same way as Bootstrap do.
 
-| name | *aliases* | css generated |
-| - | - | - |
-| sm | @media (min-width: 576px)` |
-| md | @media (min-width: 768px)` |
-| lg | @media (min-width: 992px)` |
-| xl | @media (min-width: 1200px)` |
-| xxl | @media (min-width: 1540px)` |
+| name | *aliases* |
+| - | - |
+| sm | @media (min-width: 576px) |
+| md | @media (min-width: 768px) |
+| lg | @media (min-width: 992px) |
+| xl | @media (min-width: 1200px) |
+| xxl | @media (min-width: 1540px) |
 
 
 #### Container
