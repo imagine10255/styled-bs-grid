@@ -8,10 +8,9 @@ styled-bs-grid is a bootstrap grid use styled-component:
 - [Quickly build your entire app with our Grid Bootstrap & Styled-component](https://github.com/imagine10255/styled-bs-grid/tree/master).
 
 
-## Config parameters
 
 
-#### Quick Start
+## Quick Start
 
 Install styled-bs-grid in your project
 ```zsh
@@ -92,6 +91,7 @@ export default MyPage;
 ```
 
 
+## parameters
 
 Using this `media` object will help you to build media-queries that will fit the same way as Bootstrap do.
 
