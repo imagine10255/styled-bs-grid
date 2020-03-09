@@ -1,14 +1,19 @@
 {
   "name": "styled-bs-grid",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:flow": "flow-remove-types src/ -d lib/",
     "test": "react-scripts test",
     "lint": "eslint . --fix",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish:npm": "rm -rf dist && mkdir dist && babel ./src/lib -d dist --copy-files",
+    "prepack": "rm -rf dist && mkdir dist && yarn run prepack:babel && yarn run prepack:flow",
+    "prepack:babel": "babel src/lib -d dist",
+    "prepack:flow": "flow-copy-source src/lib lib"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,6 +30,15 @@
       "last 1 safari version"
     ]
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "babel-plugin-styled-components",
+      "transform-flow-strip-types"
+    ]
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -36,7 +50,11 @@
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
     "babel-eslint": "10.0.1",
+    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "eslint": "5.14.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-airbnb-base": "13.1.0",
@@ -46,6 +64,7 @@
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "flow-bin": "^0.120.1"
+    "flow-bin": "^0.120.1",
+    "flow-copy-source": "^2.0.9"
   }
 }
