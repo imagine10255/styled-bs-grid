@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+// eslint-disable-next-line import/no-unresolved
 import {ThemeProvider} from 'styled-components';
 import merge from 'lodash/merge';
 import {defaultTheme, themeName} from '../../config';

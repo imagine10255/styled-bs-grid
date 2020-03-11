@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+// eslint-disable-next-line import/no-unresolved
 import styled, {css} from 'styled-components';
 import {ContainerProps} from './types';
 
@@ -7,7 +8,7 @@ import {themeName} from '../../config';
 import media from '../../media';
 import getDataName from './getDataName';
 
-const generateWidthMaxMedia = props => {
+const generateMedia = props => {
     return Object.keys(props.theme[themeName].gridBreakpoints).map(sizeName => {
         return media[sizeName]`
                 max-width: ${props.theme[themeName].gridBreakpoints[sizeName]}px;
@@ -18,9 +19,9 @@ const generateWidthMaxMedia = props => {
 /**
  * Row Component
  */
-const Container = styled.div.attrs(props  => ({
-    'data-bs': getDataName(props),
+export default styled.div.attrs<ContainerProps>(props  => ({
     'data-grid': 'container',
+    'data-debug': getDataName(props),
 }))`
   width: 100%;
   margin-right: auto;
@@ -32,11 +33,7 @@ const Container = styled.div.attrs(props  => ({
      
      
      ${!props.fluid && css`
-        ${generateWidthMaxMedia(props)};
+        ${generateMedia(props)};
     `}
-  
  `}
 `;
-
-export default (props: ContainerProps) => <Container {...props}/>;
-

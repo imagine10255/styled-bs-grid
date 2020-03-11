@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {ThemeProvider} from 'styled-components';
 import {GridThemeProvider} from 'styled-bs-grid';
 
-import './index.css';
+import './css/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

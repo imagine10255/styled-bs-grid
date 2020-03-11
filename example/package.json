@@ -6,11 +6,11 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "react": "link:../node_modules/react",
+    "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-scripts": "3.4.0",
-    "styled-components": "^5.0.1",
-    "styled-bs-grid": "link:../dist"
+    "styled-bs-grid": "link:../dist",
+    "styled-components": "^5.0.1"
   },
   "resolutions": {
     "imagine10255/styled-bs-grid": "0.1.9"
@@ -35,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-markdown": "^4.3.1"
   }
 }

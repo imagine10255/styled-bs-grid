@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+// eslint-disable-next-line import/no-unresolved
 import styled, {css} from 'styled-components';
 import getCss from './css';
 import getDataName from './getDataName';
@@ -9,11 +10,11 @@ import {ColProps} from './types';
 import {isEmpty} from '../../utils';
 import {themeName} from '../../config';
 
-const generateGirdMedia = props => {
+const generateMedia = props => {
     // eslint-disable-next-line array-callback-return
     return Object.keys(props.theme[themeName].gridBreakpoints).map(sizeName => {
         if(!isEmpty(props[sizeName])){
-            return media[sizeName]`${getCss.col(props[sizeName], props.theme[themeName].gridColumns)}}`
+            return media[sizeName]`${getCss.col(props[sizeName], props.theme[themeName].gridColumns)}}`;
         }
     });
 };
@@ -26,9 +27,9 @@ const generateGirdMedia = props => {
  * https://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
  *
  */
-const Col = styled.div.attrs(props  => ({
-    'data-bs': getDataName(props),
+export default styled.div.attrs<ColProps>(props  => ({
     'data-grid': 'col',
+    'data-debug': getDataName(props),
 }))`
   position: relative;
   width: 100%;
@@ -40,10 +41,6 @@ const Col = styled.div.attrs(props  => ({
      
      ${props.col && getCss.col(props.col, props.theme[themeName].gridColumns)};
      
-     ${generateGirdMedia(props)};
+     ${generateMedia(props)};
  `}
-  
 `;
-
-export default (props: ColProps) => <Col {...props}/>;
-

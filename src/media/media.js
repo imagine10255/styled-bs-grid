@@ -1,4 +1,5 @@
 // @flow
+// eslint-disable-next-line import/no-unresolved
 import {css} from 'styled-components';
 import get from 'lodash/get';
 import {themeName, defaultTheme} from '../config';

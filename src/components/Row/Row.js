@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+// eslint-disable-next-line import/no-unresolved
 import styled, {css} from 'styled-components';
 import {RowProps} from './types';
 import getDataName from './getDataName';
@@ -18,9 +19,9 @@ const getRowMargin = props => {
 /**
  * Row Component
  */
-const Row = styled.div.attrs(props  => ({
-    'data-bs': getDataName(props),
+export default styled.div.attrs<RowProps>(props  => ({
     'data-grid': 'row',
+    'data-debug': getDataName(props),
 }))`
   display: -ms-flexbox;
   display: flex;
@@ -39,5 +40,3 @@ const Row = styled.div.attrs(props  => ({
      `}
  `}
 `;
-
-export default (props: RowProps) => <Row {...props}/>;

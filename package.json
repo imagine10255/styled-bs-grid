@@ -18,7 +18,7 @@
     "node": ">=8.15.0"
   },
   "scripts": {
-    "dev": "yarn prepack:babel --watch",
+    "dev": "yarn prepack:babel:watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "cz": "./node_modules/cz-customizable/standalone.js",
@@ -29,6 +29,7 @@
     "release:push": "git push --follow-tags origin master",
     "prepack": "rm -rf ./dist && mkdir dist && yarn run prepack:babel && yarn run prepack:flow",
     "prepack:babel": "babel src -d dist",
+    "prepack:babel:watch": "babel src -d dist --watch",
     "prepack:flow": "flow-copy-source src dist"
   },
   "browserslist": {
@@ -60,12 +61,12 @@
       "config": "./internals/cz-customizable/config.js"
     }
   },
-  "dependencies": {
-    "lodash": "^4.17.15",
-    "react": "16.13.0",
-    "react-dom": "16.13.0",
-    "styled-components": "^5.0.1"
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "styled-components": ">=4",
+    "lodash": ">=4"
   },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
@@ -77,6 +78,12 @@
     "babel-eslint": "10.0.1",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "@types/react": "16.9.5",
+    "@types/react-dom": "16.9.5",
+    "@types/styled-components": "5.0.1",
+    "@types/lodash": "4.14.149",
+    "cz-conventional-changelog": "^3.1.0",
+    "cz-customizable": "^6.2.0",
     "eslint": "5.14.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-airbnb-base": "13.1.0",
@@ -88,11 +95,9 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "flow-bin": "^0.120.1",
     "flow-copy-source": "^2.0.9",
-    "standard-version": "^7.1.0",
     "husky": "^4.2.3",
-    "cz-conventional-changelog": "^3.1.0",
-    "cz-customizable": "^6.2.0",
-    "validate-commit-msg": "^2.14.0",
-    "lint-staged": "^10.0.8"
+    "lint-staged": "^10.0.8",
+    "standard-version": "^7.1.0",
+    "validate-commit-msg": "^2.14.0"
   }
 }
