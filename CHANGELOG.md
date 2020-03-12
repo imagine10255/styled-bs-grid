@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/imagine10255/styled-bs-grid/compare/v1.0.1...v1.0.2) (2020-03-12)
+
+
+### Bug Fixes
+
+* 修正 webstorm type無法識別提示的問題 ([61f2169](https://github.com/imagine10255/styled-bs-grid/commit/61f216912b9f800ca853646a4d4d825583daefb2))
+
 ### [1.0.1](https://github.com/imagine10255/styled-bs-grid/compare/v1.0.0...v1.0.1) (2020-03-11)
 
 
