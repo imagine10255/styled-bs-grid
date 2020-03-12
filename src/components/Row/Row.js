@@ -19,7 +19,7 @@ const getRowMargin = props => {
 /**
  * Row Component
  */
-export default styled.div.attrs<RowProps>(props  => ({
+const Row = styled.div.attrs(props  => ({
     'data-grid': 'row',
     'data-debug': getDataName(props),
 }))`
@@ -40,3 +40,6 @@ export default styled.div.attrs<RowProps>(props  => ({
      `}
  `}
 `;
+
+export default (props: RowProps) => <Row {...props}/>;
+

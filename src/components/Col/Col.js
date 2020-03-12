@@ -21,13 +21,13 @@ const generateMedia = props => {
 
 /**
  * Col Component
- * breakpoints sort: xs => xl
+ * breakpoints sort: sm => xl
  *
  * qa: min-height=1px
  * https://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
  *
  */
-export default styled.div.attrs<ColProps>(props  => ({
+const Col = styled.div.attrs(props  => ({
     'data-grid': 'col',
     'data-debug': getDataName(props),
 }))`
@@ -44,3 +44,5 @@ export default styled.div.attrs<ColProps>(props  => ({
      ${generateMedia(props)};
  `}
 `;
+
+export default (props: ColProps) => <Col {...props}/>;

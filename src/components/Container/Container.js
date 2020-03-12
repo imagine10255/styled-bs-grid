@@ -19,7 +19,7 @@ const generateMedia = props => {
 /**
  * Row Component
  */
-export default styled.div.attrs<ContainerProps>(props  => ({
+const Container = styled.div.attrs(props  => ({
     'data-grid': 'container',
     'data-debug': getDataName(props),
 }))`
@@ -37,3 +37,5 @@ export default styled.div.attrs<ContainerProps>(props  => ({
     `}
  `}
 `;
+
+export default (props: ContainerProps) => <Container {...props}/>;
